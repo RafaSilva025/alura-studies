@@ -4,7 +4,7 @@ import Botao from '../Botao';
 class Formulario extends React.Component {
   render() {
       return (
-          <form>
+          <form className='novaTarefa'>
             <div>
               <label htmlFor="tarefa">
                  Adicione um novo estudo
