@@ -1,6 +1,6 @@
 import React from 'react';
-import style from './Lista.module.scss';
 import Item from './item';
+import style from './Lista.module.scss';
 
 function Lista() {
   const tarefas = [{
@@ -18,7 +18,7 @@ function Lista() {
       <h2> Estudos do dia </h2>
       <ul>
         {tarefas.map((item, index) => (
-          <Item 
+          <Item
             key={index}
             {...item}
           />
