@@ -3,6 +3,10 @@ import Botao from '../Botao';
 import style from './Formulario.module.scss';
 
 class Formulario extends React.Component {
+  state= {
+    tarefa: '',
+    tempo: '',
+  }
   render() {
     return (
       <form className={style.novaTarefa}>
@@ -20,17 +24,19 @@ class Formulario extends React.Component {
         </div>
         <div className={style.inputContainer}>
           <label htmlFor="tempo">
-            Tempo
-          </label>
-          <input
+          Tempo
+        </label>
+        <input
             type="time"
             step="1"
             name="tempo"
+            value={this.state.tempo}
+            onChange=(evento => this.setState({ ...this.state, tempo: evento.target.value}))
             id="tempo"
             min="00:00:00"
             max="01:30:00"
             required
-          />
+        />
         </div>
         <Botao>
           Adicionar
