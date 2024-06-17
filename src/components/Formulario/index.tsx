@@ -9,7 +9,7 @@ class Formulario extends React.Component {
   }
   render() {
     return (
-      <form className={style.novaTarefa}>
+      <form className={style.novaTarefa} onSubmit={}>
         <div className={style.inputContainer}>
           <label htmlFor="tarefa">
             Adicione um novo estudo
@@ -18,6 +18,8 @@ class Formulario extends React.Component {
             type="text"
             name="tarefa"
             id="tarefa"
+            value={this.state.tarefa}
+            onChange={evento => this.setState({...this.state, tarefa: evento.target.value})}
             placeholder="O que você quer estudar"
             required
           />
