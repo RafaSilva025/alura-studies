@@ -5,11 +5,16 @@ import style from './Formulario.module.scss';
 class Formulario extends React.Component {
   state= {
     tarefa: '',
-    tempo: '',
+    tempo: '00:00',
   }
+
+  adicionarTarefa(evento: React.FormEvent<HTMLFormElement>) {
+    evento.preventDefault();
+  }
+
   render() {
     return (
-      <form className={style.novaTarefa} onSubmit={}>
+      <form className={style.novaTarefa} onSubmit={this.adicionarTarefa.bind(this)}>
         <div className={style.inputContainer}>
           <label htmlFor="tarefa">
             Adicione um novo estudo
