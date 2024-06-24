@@ -9,9 +9,14 @@ function App() {
   const [tarefas, setTarefas] = useState<ITarefa[]>([]);
   const [selecionado, setSelecionado] = useState<ITarefa>();
 
-  function selecionaTarefa(tarefaSelecionada: ITarefa) {
+  function selecionaTarefa(tarefaSelecionada, ITarefa){
     setSelecionado(tarefaSelecionada);
-  }
+    setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa => ({
+        ...tarefa,
+        selecionado: true
+
+    })));
+}
 
   return (
     <div className={style.AppStyle}>
