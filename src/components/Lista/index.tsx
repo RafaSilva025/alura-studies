@@ -1,7 +1,7 @@
 import React from 'react';
 import { ITarefa } from '../../types/tarefa';
 import Item from './item';
-import style from './Lista.module.scss';
+import style from './Item.module.scss';
 
 
 function Lista({ tarefas, selecionaTarefa }: Props) {
